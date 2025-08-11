@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Canva — Ezequiel Estevo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  :root {
+    --bg: #0f1724;
+    --card: #0b1220;
+    --accent1: #7C3AED;
+    --accent2: #06B6D4;
+    --muted: rgba(255,255,255,0.65);
+  }
+
+  body {
+    background: linear-gradient(180deg,var(--bg),#071024);
+    color: #fff;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 28px;
+  }
+
+  h1 {
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    background: linear-gradient(180deg,rgba(255,255,255,0.03),transparent);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    transform: translateY(6px);
+  }
+
+  .gallery-item:hover {
+    transform: translateY(0);
+    border-color: rgba(255,255,255,0.1);
+    box-shadow: 0 18px 40px rgba(2,6,23,0.7);
+    background: linear-gradient(135deg,rgba(124,58,237,0.12),rgba(6,182,212,0.08));
+  }
+
+  .gallery-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .gallery-content h3 {
+    color: var(--accent2);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .gallery-content p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .gallery-item::before {
+    content: '\1F4C4';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: rgba(255,255,255,0.8);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .gallery-item:hover::before {
+    transform: rotate(360deg);
+    color: var(--gold);
+  }
+
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">Ezequiel Estevo<span class="dot"></span></div>
+      <nav>
+        <a href="Principal.html">Início</a>
+      </nav>
+    </header>
+
+    <section class="card project-gallery">
+      <h1>Meus Projetos no Canva</h1>
+      <div class="gallery-grid">
+        <a href="https://www.canva.com/design/DAGdmpoNuaY/VY5w6vFn-4EvEtirurwRfQ/view?utm_content=DAGdmpoNuaY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h51fe7bc10f" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="gallery-item">
+          <div class="gallery-content">
+            <h3>Comunicado Pastoral da Sobriedade</h3>
+            <p>Design informativo para comunicação pastoral</p>
+          </div>
+        </a>
+        <a href="https://www.canva.com/design/DAGmCz3LDuU/ANqf5DjmY9R5XFGzEjHrQg/view?utm_content=DAGmCz3LDuU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=had51bf8e76" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="gallery-item">
+          <div class="gallery-content">
+            <h3>Convite Pastoral da Sobriedade</h3>
+            <p>Design de convite para evento pastoral</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Ezequiel Estevo.
+    </footer>
+  </div>
+
+<script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

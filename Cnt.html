@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatos - Ezequiel Estevo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Cnt.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">EZEQUIEL ESTEVO<span class="dot"></span></div>
+            <nav>
+                <a href="Principal.html">Início</a>
+            </nav>
+        </header>
+
+        <section class="contact-section card">
+            <h2>Meus Contatos</h2>
+            <div class="social-grid">
+                <a href="mailto:ezequielestevo00@gmail.com" class="social-item" target="_blank" rel="noopener noreferrer">
+                    <h3>Email</h3>
+                    <p>ezequielestevo00@gmail.com</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/ezequielestevo" target="_blank" rel="noopener noreferrer" class="social-item">
+                    <div class="icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Ezequiel Estevo</p>
+                </a>
+
+                <a href="https://github.com/EzequielEstevo" target="_blank" rel="noopener noreferrer" class="social-item">
+                    <div class="icon">💻</div>
+                    <h3>GitHub</h3>
+                    <p>EzequielEstevo</p>
+                </a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© <span id="year"></span> Ezequiel Estevo</p>
+        </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
