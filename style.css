@@ -46,6 +46,9 @@ header{
 .logo{
   font-weight:800;
   letter-spacing:0.6px;
+  text-transform:uppercase;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
 }
 
 .logo .dot{
@@ -54,13 +57,19 @@ header{
     margin-left:4px;
     margin-right:4px;
     font-weight:400;
+    animation: blink 1.5s infinite;
+    
     
 
 }
 
 nav a{
   color:var(--muted);
+  text-align: center;
   text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  justify-content: center;
   margin-left:18px;
   font-weight:600;
   font-size:14px;
@@ -100,6 +109,8 @@ nav a:hover::after {
   padding:26px;
   border-radius:16px;
   box-shadow:0 6px 30px rgba(2,6,23,0.6);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
   backdrop-filter:blur(6px);
   transform:translateY(6px);
   transition: transform .35s ease, box-shadow .35s, background 0.3s ease;
@@ -316,3 +327,61 @@ nav ul.links {
     flex-wrap: wrap;
     gap: 12px;
 }
+.gallery-item{
+  text-decoration: none;
+
+}
+/*effect_bar*/
+
+
+
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    /* ===== Barra ===== */
+    .barra {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid #333;
+    }
+
+    /* ===== Faixa de ícones ===== */
+    .faixa {
+      display: flex;
+      gap: 40px; /* espaço entre ícones */
+      width: max-content;
+      animation: rolar 12s linear infinite;
+      padding-left: 100%;
+    }
+
+    .faixa i, .faixa img {
+      font-size: 24px;
+      color: #0ff;
+      height: 28px;
+      width: auto;
+    }
+
+    /* ===== Animação ===== */
+    @keyframes rolar {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Espaço para conteúdo abaixo */
+    main {
+      margin-top: 60px;
+      padding: 20px;
+    }
+
+
