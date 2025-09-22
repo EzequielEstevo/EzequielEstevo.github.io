@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Assistente de Automação: O Futuro do Trabalho - Ezequiel Estevo" />
+    <title>Assistente de Automação - Ezequiel Estevo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <section>
+
+                <nav>
+                    <a href="../index.html">Início</a>
+                    <a href="../blog.html">Atualizações</a>
+                    <a href="../Cnt.html">Contatos</a>
+                </nav>
+            </section>
+        </header>
+
+        <main class="content">
+            <article class="post">
+                <h1>Assistente de Automação</h1>
+                <div class="post-meta">
+                    <span><i class="fa-regular fa-calendar"></i> 21 de setembro de 2025</span>
+                    <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
+                </div>
+                                
+                <!-- Modal para expandir imagem -->
+                <div id="imageModal" class="modal" onclick="closeModal()">
+                    <img class="modal-content" id="expandedImage">
+                </div>
+
+                <div class="post-content">
+                    <h2>Introdução à Automação</h2>
+                    <p>
+                        A automação tem se tornado cada vez mais presente em nosso dia a dia, revolucionando a forma como trabalhamos e 
+                        interagimos com a tecnologia. Os assistentes de automação são ferramentas poderosas que podem ajudar a otimizar 
+                        processos, aumentar a produtividade e reduzir erros humanos.
+                    </p>
+
+                    <h2>O Que é um Assistente de Automação?</h2>
+                    <p>
+                        Um assistente de automação é um software ou conjunto de ferramentas que ajuda a automatizar tarefas repetitivas 
+                        e processos de trabalho. Ele pode ser programado para executar uma variedade de funções, desde o preenchimento 
+                        automático de formulários até a análise de dados complexos.
+                    </p>
+
+                    <h2>Benefícios da Automação</h2>
+                    <ul>
+                        <li>Aumento da produtividade</li>
+                        <li>Redução de erros humanos</li>
+                        <li>Economia de tempo e recursos</li>
+                        <li>Padronização de processos</li>
+                        <li>Melhor análise de dados</li>
+                    </ul>
+
+                    <h2>Implementação na Prática</h2>
+                    <p>
+                        A implementação de um assistente de automação requer planejamento e uma compreensão clara dos processos que 
+                        serão automatizados. É importante começar com tarefas simples e gradualmente expandir para processos mais complexos.
+                    </p>
+
+                    <h2>O Futuro da Automação</h2>
+                    <p>
+                        Com o avanço da inteligência artificial e do aprendizado de máquina, os assistentes de automação estão se 
+                        tornando cada vez mais sofisticados. No futuro, esperamos ver uma integração ainda maior entre humanos e 
+                        máquinas, criando um ambiente de trabalho mais eficiente e produtivo.
+                    </p>
+                </div>
+            </article>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Funções para o modal de imagem
+        function expandImage(src) {
+            const modal = document.getElementById('imageModal');
+            const expandedImg = document.getElementById('expandedImage');
+            modal.style.display = 'block';
+            expandedImg.src = src;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+
+        // Fecha o modal com a tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

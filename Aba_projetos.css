@@ -23,6 +23,7 @@
     background-position: 50% 100%;
     background-repeat: no-repeat;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     
 

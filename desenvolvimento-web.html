@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Desenvolvimento Web - Ezequiel Estevo" />
+    <title>Desenvolvimento Web - Ezequiel Estevo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <section>
+
+                <div class="logo">EZEQUIEL ESTEVO<span class="dot"></span></div>
+                <br><br>
+                <nav>
+                    <a href="index.html">Início</a>
+                    <a href="Cnt.html">Contatos</a>
+                </nav>
+            </section>
+        </header>
+
+        <main class="content">
+            <h1>Desenvolvimento Web</h1>
+            <section class="card">
+                <h2>Minhas Habilidades</h2>
+                <ul class="skill-list">
+                    <li><i class="fa-brands fa-html5"></i> HTML5 - Estruturação semântica e acessível</li>
+                    <li><i class="fa-brands fa-css3-alt"></i> CSS3 - Estilização moderna e responsiva</li>
+                    <li><i class="fa-brands fa-js"></i> JavaScript - Interatividade e dinamismo</li>
+                    <li><i class="fa-brands fa-github"></i> Git/GitHub - Controle de versão</li>
+                </ul>
+            </section>
+
+            <section class="card">
+                <h2>Trabalhos Desenvolvidos</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <h3>Portfolio Pessoal</h3>
+                        <p>Site desenvolvido com HTML5 e CSS3, totalmente responsivo e com design moderno.</p>
+                    </article>
+                    <!-- Adicione mais trabalhos aqui -->
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
+        </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Atualizações - Ezequiel Estevo" />
+    <title>Atualizações - Ezequiel Estevo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="js/theme.js" defer></script>
+</head>
+<body class="page">
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <section>
+                <div class="barra">
+                    <nav>
+                        <a href="index.html">Início</a>
+                        <a href="blog.html">Atualizações</a>
+                        <a href="Cnt.html">Contatos</a>
+                    </nav>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </section>
+        </header>
+
+        <main class="content">
+            <h1>Atualizações</h1>
+            
+            <div class="atualizacoes-grid">
+                <article class="atualizacao-post">
+                    <div class="post-image video-container">
+                        <video autoplay muted loop controls playsinline>
+                            <source src="video/automação de secretaria.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                    </div>
+                    <div class="post-content">
+                        <h2>Assistente de Automação</h2>
+                        <div class="post-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 21 de setembro de 2025</span>
+                            <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
+                        </div>
+                        <p class="post-excerpt">
+                           crie uma automação que tem a função de uma secretaria onde ela tem nome, ela age para mim, e processa os dados dos usuarios como: nome, email, telefone, entre outro.
+                        </p>
+                        <a href="posts/assistente-automacao.html" class="read-more">Ler mais <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <footer>
+            <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
+        </footer>
+    </div>
+
+    <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

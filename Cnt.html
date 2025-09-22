@@ -3,47 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com Ezequiel Estevo - Desenvolvedor Web">
     <title>Contatos - Ezequiel Estevo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="Cnt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="theme.js" defer></script>
 </head>
 <body>
     <div class="container">
+        <!-- Header -->
         <header>
-            <div class="logo">EZEQUIEL ESTEVO<span class="dot"></span></div>
-            <nav>
-                <a href="index.html">Início</a>
-            </nav>
+            <section>
+
+                <nav>
+                    <a href="index.html">Início</a>
+                    <a href="blog.html">Atualizações</a>
+                    <a href="Cnt.html" class="active">Contatos</a>
+                </nav>
+            </section>
         </header>
 
-        <section class="contact-section card">
-            <h2>Meus Contatos</h2>
-            <div class="social-grid">
-                <a href="mailto:ezequielestevo00@gmail.com" class="social-item" target="_blank" rel="noopener noreferrer" class="social-item">
-                    <div class="icon">📧</div>
-                    <h3>Email</h3>
+        <main class="content">
+            <section class="contact-section card">
+                <h1>Meus Contatos</h1>
+                <div class="social-grid">
+                    <a href="mailto:ezequielestevo00@gmail.com" class="social-item" target="_blank" rel="noopener noreferrer">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                    
+                    </a>
 
-                    <p>ezequielestevo00@gmail.com</p>
-                </a>
+                    <a href="https://www.linkedin.com/in/ezequielestevo" target="_blank" rel="noopener noreferrer" class="social-item">
+                        <div class="icon">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                  
+                    </a>
 
-                <a href="https://www.linkedin.com/in/ezequielestevo" target="_blank" rel="noopener noreferrer" class="social-item">
-                    <div class="icon">💼</div>
-                    <h3>LinkedIn</h3>
-                    <p>Ezequiel Estevo</p>
-                </a>
+                    <a href="https://github.com/EzequielEstevo" target="_blank" rel="noopener noreferrer" class="social-item">
+                        <div class="icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                    
+                    </a>
 
-                <a href="https://github.com/EzequielEstevo" target="_blank" rel="noopener noreferrer" class="social-item">
-                    <div class="icon">💻</div>
-                    <h3>GitHub</h3>
-                    <p>EzequielEstevo</p>
-                </a>
-            </div>
-        </section>
+                    <a href="https://wa.me/5598986240028?text=Olá,%20gostaria%20de%20conversar%20sobre%20possíveis%20parcerias%20ou%20informações%20adicionais." 
+                       target="_blank" rel="noopener noreferrer" class="social-item">
+                        <div class="icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp</h3>
+                    
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <a href="index.html" class="back-button" title="Voltar para o início">
+            <i class="fa-solid fa-arrow-left"></i>
+        </a>
 
         <footer>
-            <p>© <span id="year"></span> Ezequiel Estevo</p>
+            <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
         </footer>
     </div>
 

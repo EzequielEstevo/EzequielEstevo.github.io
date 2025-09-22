@@ -11,9 +11,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/typography.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="theme.js" defer></script>
 </head>
-<body>
+<body class="index-page">
 
   <div class="container">
     <!-- Header -->
@@ -21,98 +23,122 @@
 <section>
        <div class="barra">
     <div class="faixa">
-      <!-- Ícones -->
       <i class="fa-brands fa-html5"></i>
       <i class="fa-brands fa-css3-alt"></i>
       <i class="fa-brands fa-js"></i>
       <i class="fa-brands fa-github"></i>
       <i class="fa-brands fa-windows"></i>
       <i class="fa-brands fa-linux"></i>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+        <i class="fas fa-moon"></i>
+      </button>
       </section>
       <section> 
        
     </div>
-      <div class="logo">EZEQUIEL ESTEVO<span class="dot"></span></div>
-      <br><br>
+      <h1 class="home-title">EZEQUIEL ESTEVO<span class="dot">.</span></h1>
       <nav>
         <a href="#sobre">Sobre</a>
-        <a href="Aba_projetos.html">projetos</a>
+        <a href="blog.html">Atualizações</a>
         <a href="Cnt.html">Contatos</a>
       </nav>
+       <img src="img/Fotografia.png" alt="logo" height="400" width="400" class="logo-img" />
+
     </header>
+
+
+
+
 </section>
-    <!-- Hero -->
+    <br><br>
+     
+   
+<!-- Hero -->
     <section class="hero">
       <div class="card">
         <h1>OLÁ! É um prazer.</h1>
-        <p class="lead">Sou experiente em Windows, Linux, pacote Office, Google Workspace e ferramentas de criação como Canva. Desenvolvo páginas, pronto para seu Web curriculo</p>
+        <p class="lead">Sou experiente em Windows, Linux, pacote Office, Google Workspace e ferramentas de criação como Canva. Desenvolvo páginas, pronto para seu Web curriculo? para o seu site de venda? ou uma automação para agilizar sua rotina em 70%</p>
         <a class="cta" href="Cnt.html">Fale comigo</a>
       </div>
 
-<img src="/img/Minha_logo.png" alt="logo" height="400" width="400" class="logo-img">
 
-
-<aside class="profile card">
-        
-        <div class="name">Ezequiel Estevo</div>
-        <div class="skills">
-          <span class="chip">Desenvolvimento  Web</span>
-          <span class="chip">Administração</span>
-          <span class="chip">Canva</span>
-          <span class="chip">Windows</span>
-          <span class="chip">Linux</span>
-          <span class="chip">Office</span>
-          <span class="chip">Google Workspace</span>
-        </div>
-      </aside>
-    </section>
 <br>
     <!-- Sobre Mim -->
     <section id="sobre" class="card">
       <h2>Sobre Mim</h2>
       <p>Olá, meu nome é <strong>Ezequiel Estevo</strong>. Tenho experiência sólida em sistemas Windows e Linux, além de dominar o pacote Office e Google Workspace. Também crio sites com HTML e CSS, sempre buscando entregar um visual moderno e responsivo.</p><p>Gosto de aprender coisas novas e aplicar meus conhecimentos para resolver problemas de forma eficiente. Minha meta é evoluir sempre, seja no desenvolvimento de sites, na criação de layouts ou em trabalhos que envolvam organização e tecnologia.</p> 
       
-      <p><b>Quer acompanhar meus projetos, ideias e novidades?
+      <p><b>Quer acompanhar minhas ideias e novidades?
 🌐 Siga minhas redes sociais e fique por dentro: Bora conectar? 🚀</b></p>
     </section>
 
-<hr border>
-
-    <!-- Projetos -->
-    <section id="projetos" class="card">
-      <h2>Projetos</h2>
-      <div class="projects">                                                                
-        <div class="proj">
-          <div class="proj-content">
-            <h3>Design no Canva</h3>
-            <p class="lead">Apresentações, posts e banners criados no Canva.</p>
-            <a href="Aba_projetos.html" class="cta">Ver projetos</a>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
-     <!-- Contatos -->
-    <section id="Contatos" class="card">
-      <h2>Contatos</h2>
-      <div class="contatos">                                                                
-        <div class="cont">
-          <h3>Acesse</h3>
-          <p class="lead">Venha conhecer e contratar sempre ágil e confiavél.</p>
-          <a href="Cnt.html" class="cta">Redes</a>
-        </div>
-      </div>
-    </section>
-        
-    <!-- Footer -->
+
+
     <footer id="contato">
         <nav class="links">
+          <aside class="profile card">
+        
+        <div class="name"></div>
+        <div class="skills">
+          <a href="desenvolvimento-web.html"><span class="chip">Desenvolvimento Web</span></a>
+          <a href="administracao.html"><span class="chip">Administração</span></a>
+          <a href="canva.html"><span class="chip">Canva</span></a>
+          <a href="windows.html"><span class="chip">Windows</span></a>
+          <a href="linux.html"><span class="chip">Linux</span></a>
+          <a href="office.html"><span class="chip">Office</span></a>
+          <a href="google-workspace.html"><span class="chip">Google Workspace</span></a>
+        </div>
+      </aside>
+    </section>
             <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
         </nav>
     </footer>
   </div>
 
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+     <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Script para controlar a visibilidade da logo
+    let lastScrollPosition = 0;
+    const logo = document.querySelector('.logo-img');
+    
+    window.addEventListener('scroll', () => {
+      const currentScrollPosition = window.pageYOffset;
+      
+      // Se rolar mais de 100px para baixo, esconde a logo
+      if (currentScrollPosition > 100) {
+        logo.classList.add('hidden');
+      } else {
+        // Se voltar para o topo, mostra a logo
+        logo.classList.remove('hidden');
+      }
+      
+      lastScrollPosition = currentScrollPosition;
+    });
+
+    // Configuração do botão de tema
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      toggleTheme();
+      updateThemeIcon();
+    });
+
+    function updateThemeIcon() {
+      const themeIcon = document.querySelector('.theme-toggle i');
+      const currentTheme = localStorage.getItem('theme') || 'dark';
+      
+      if (currentTheme === 'dark') {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+      } else {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+    }
+
+    // Atualiza o ícone inicial
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+  </script>
 </body>
 </html>
