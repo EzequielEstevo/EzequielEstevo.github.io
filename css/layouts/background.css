@@ -1,0 +1,24 @@
+/* Efeito de gradiente para o fundo */
+body {
+    background: linear-gradient(
+        180deg,
+        var(--bg) 0%,
+        var(--bg-gradient) 50%,
+        var(--bg) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Ajuste da altura do gradiente */
+.container {
+    min-height: 150vh; /* Aumentando a altura para o degradê aparecer mais abaixo */
+}
+
+/* Removendo botão de tema da página de atualizações */
+.blog-page .theme-toggle {
+    display: none;
+}

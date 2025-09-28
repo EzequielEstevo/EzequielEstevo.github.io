@@ -1,0 +1,17 @@
+/* Efeito de Digitação */
+.txt-type {
+    font-weight: bold;
+    color: var(--text);
+    display: inline-block;
+}
+
+.txt-type > .txt {
+    border-right: 0.2rem solid var(--accent2);
+    animation: blink 0.75s infinite;
+}
+
+@keyframes blink {
+    0% { border-color: transparent }
+    50% { border-color: var(--accent2) }
+    100% { border-color: transparent }
+}

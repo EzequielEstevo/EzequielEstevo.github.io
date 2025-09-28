@@ -12,38 +12,41 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/effects.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<script src="theme.js" defer></script>
+<script src="js/effects/typing.js" defer></script>
+
 </head>
 <body class="index-page">
 
   <div class="container">
     <!-- Header -->
     <header>
-<section>
-       <div class="barra">
-    <div class="faixa">
-      <i class="fa-brands fa-html5"></i>
-      <i class="fa-brands fa-css3-alt"></i>
-      <i class="fa-brands fa-js"></i>
-      <i class="fa-brands fa-github"></i>
-      <i class="fa-brands fa-windows"></i>
-      <i class="fa-brands fa-linux"></i>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-        <i class="fas fa-moon"></i>
-      </button>
-      </section>
-      <section> 
-       
-    </div>
-      <h1 class="home-title">EZEQUIEL ESTEVO<span class="dot">.</span></h1>
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="blog.html">Atualizações</a>
-        <a href="Cnt.html">Contatos</a>
-      </nav>
-       <img src="img/Fotografia.png" alt="logo" height="400" width="400" class="logo-img" />
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">Home</a>
+                </li>
+                    <a href="blog.html" class="nav-link">Atualizações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="Cnt.html" class="nav-link">Contatos</a>
+                </li>
+            </ul>
 
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+      </nav>
+
+      <div class="profile-center">
+        <img src="img/Fotografia.png" alt="logo" class="profile-img" />
+        <h1 class="home-title"><span class="txt-type"></span><span class="dot">.</span></h1>
+      </div>
     </header>
 
 
@@ -72,26 +75,30 @@
 🌐 Siga minhas redes sociais e fique por dentro: Bora conectar? 🚀</b></p>
     </section>
 
-
-
-
+    <!-- Tecnologias -->
+    <section id="tecnologias" class="tech-section card">
+      <h2>Tecnologias</h2>
+      <div class="tech-icons">
+        <i class="fa-brands fa-html5" title="HTML5"></i>
+        <i class="fa-brands fa-css3-alt" title="CSS3"></i>
+        <i class="fa-brands fa-js" title="JavaScript"></i>
+        <i class="fa-brands fa-github" title="GitHub"></i>
+        <i class="fa-brands fa-windows" title="Windows"></i>
+        <i class="fa-brands fa-linux" title="Linux"></i>
+      </div>
+      
+      <div class="skills">
+        <a href="desenvolvimento-web.html"><span class="chip">Desenvolvimento Web</span></a>
+        <a href="administracao.html"><span class="chip">Administração</span></a>
+        <a href="canva.html"><span class="chip">Canva</span></a>
+        <a href="windows.html"><span class="chip">Windows</span></a>
+        <a href="linux.html"><span class="chip">Linux</span></a>
+        <a href="office.html"><span class="chip">Office</span></a>
+        <a href="google-workspace.html"><span class="chip">Google Workspace</span></a>
+      </div>
+    </section>
 
     <footer id="contato">
-        <nav class="links">
-          <aside class="profile card">
-        
-        <div class="name"></div>
-        <div class="skills">
-          <a href="desenvolvimento-web.html"><span class="chip">Desenvolvimento Web</span></a>
-          <a href="administracao.html"><span class="chip">Administração</span></a>
-          <a href="canva.html"><span class="chip">Canva</span></a>
-          <a href="windows.html"><span class="chip">Windows</span></a>
-          <a href="linux.html"><span class="chip">Linux</span></a>
-          <a href="office.html"><span class="chip">Office</span></a>
-          <a href="google-workspace.html"><span class="chip">Google Workspace</span></a>
-        </div>
-      </aside>
-    </section>
             <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
         </nav>
     </footer>
@@ -99,46 +106,7 @@
 
      <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Script para controlar a visibilidade da logo
-    let lastScrollPosition = 0;
-    const logo = document.querySelector('.logo-img');
-    
-    window.addEventListener('scroll', () => {
-      const currentScrollPosition = window.pageYOffset;
-      
-      // Se rolar mais de 100px para baixo, esconde a logo
-      if (currentScrollPosition > 100) {
-        logo.classList.add('hidden');
-      } else {
-        // Se voltar para o topo, mostra a logo
-        logo.classList.remove('hidden');
-      }
-      
-      lastScrollPosition = currentScrollPosition;
-    });
-
-    // Configuração do botão de tema
-    document.getElementById('theme-toggle').addEventListener('click', () => {
-      toggleTheme();
-      updateThemeIcon();
-    });
-
-    function updateThemeIcon() {
-      const themeIcon = document.querySelector('.theme-toggle i');
-      const currentTheme = localStorage.getItem('theme') || 'dark';
-      
-      if (currentTheme === 'dark') {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-      } else {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-      }
-    }
-
-    // Atualiza o ícone inicial
-    document.addEventListener('DOMContentLoaded', updateThemeIcon);
   </script>
+  <script src="nav.js"></script>
 </body>
 </html>

@@ -10,24 +10,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/typography.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <script src="js/theme.js" defer></script>
 </head>
-<body class="page">
+<body class="blog-page">
     <div class="container">
         <!-- Header -->
         <header>
-            <section>
-                <div class="barra">
-                    <nav>
-                        <a href="index.html">Início</a>
-                        <a href="blog.html">Atualizações</a>
-                        <a href="Cnt.html">Contatos</a>
-                    </nav>
-                    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
-                        <i class="fas fa-moon"></i>
-                    </button>
+            <nav class="navbar" id="navbar">
+                <div class="nav-container">
+                    <ul class="nav-menu" id="nav-menu">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="blog.html" class="nav-link active">Atualizações</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Cnt.html" class="nav-link">Contatos</a>
+                        </li>
+                    </ul>
+
+                    <div class="hamburger" id="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                 </div>
-            </section>
+            </nav>
+            <script src="nav.js"></script>
         </header>
 
         <main class="content">
@@ -36,8 +45,8 @@
             <div class="atualizacoes-grid">
                 <article class="atualizacao-post">
                     <div class="post-image video-container">
-                        <video autoplay muted loop controls playsinline>
-                            <source src="video/automação de secretaria.mp4" type="video/mp4">
+                        <video controls loop playsinline>
+                            <source src="video/secretaria virtual.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos HTML5.
                         </video>
                     </div>
@@ -47,15 +56,29 @@
                             <span><i class="fa-regular fa-calendar"></i> 21 de setembro de 2025</span>
                             <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
                         </div>
-                        <p class="post-excerpt">
-                           crie uma automação que tem a função de uma secretaria onde ela tem nome, ela age para mim, e processa os dados dos usuarios como: nome, email, telefone, entre outro.
-                        </p>
-                        <a href="posts/assistente-automacao.html" class="read-more">Ler mais <i class="fa-solid fa-arrow-right"></i></a>
+
+                       
                     </div>
                 </article>
             </div>
         </main>
-
+<main> 
+            
+            <div class="atualizacoes-grid">
+                <article class="atualizacao-post">
+                    <div class="post-image video-container">
+                        <video controls loop playsinline>
+                            <source src="video/video sistema PDV.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos HTML5.
+                        </video>
+                    </div>
+                    <div class="post-content">
+                        <h2>Sistema PDV EZ</h2>
+                        <div class="post-meta">
+                            <span><i class="fa-regular fa-calendar"></i> 27 de setembro de 2025</span>
+                            <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
+                        </div> 
+</main>
         <footer>
             <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
         </footer>
