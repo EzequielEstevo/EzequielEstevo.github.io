@@ -15,24 +15,36 @@
     <div class="container">
         <!-- Header -->
         <header>
+            <!-- NAVIGATION: logo-only nav (nome removido). Comportamento: ver `nav.js` e `css/components/navbar.css` -->
             <nav class="navbar" id="navbar">
                 <div class="nav-container">
-                    <ul class="nav-menu" id="nav-menu">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Início</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog.html" class="nav-link active">Atualizações</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="Cnt.html" class="nav-link">Contatos</a>
-                        </li>
-                    </ul>
+                    <a href="index.html" class="nav-brand">
+                        <div class="nav-logo-wrapper">
+                            <img src="img/Fotografia.png" alt="Foto de perfil" class="nav-logo">
+                        </div>
+                        <!-- Título removido da navegação: apenas imagem exibida conforme solicitado -->
+                    </a>
+                    
+                    <div class="nav-buttons">
+                        <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+                            <svg class="hamburger-icon" viewBox="0 0 17 14" aria-hidden="true">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                            </svg>
+                        </button>
+                    </div>
 
-                    <div class="hamburger" id="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
+                    <div class="nav-menu-wrapper" id="nav-menu">
+                        <ul class="nav-menu">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="blog.html" class="nav-link active"><i class="fas fa-newspaper"></i> Atualizações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Cnt.html" class="nav-link"><i class="fas fa-address-book"></i> Contatos</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </nav>
@@ -41,11 +53,11 @@
 
         <main class="content">
             <h1>Atualizações</h1>
-            
+
             <div class="atualizacoes-grid">
                 <article class="atualizacao-post">
                     <div class="post-image video-container">
-                        <video controls loop playsinline>
+                        <video controls loop>
                             <source src="video/secretaria virtual.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos HTML5.
                         </video>
@@ -56,18 +68,12 @@
                             <span><i class="fa-regular fa-calendar"></i> 21 de setembro de 2025</span>
                             <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
                         </div>
-
-                       
                     </div>
                 </article>
-            </div>
-        </main>
-<main> 
-            
-            <div class="atualizacoes-grid">
+
                 <article class="atualizacao-post">
                     <div class="post-image video-container">
-                        <video controls loop playsinline>
+                        <video controls loop>
                             <source src="video/video sistema PDV.mp4" type="video/mp4">
                             Seu navegador não suporta vídeos HTML5.
                         </video>
@@ -77,8 +83,12 @@
                         <div class="post-meta">
                             <span><i class="fa-regular fa-calendar"></i> 27 de setembro de 2025</span>
                             <span><i class="fa-solid fa-tag"></i> Tecnologia</span>
-                        </div> 
-</main>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </main>
         <footer>
             <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
         </footer>

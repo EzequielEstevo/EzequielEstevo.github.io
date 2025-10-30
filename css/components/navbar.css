@@ -5,22 +5,28 @@
     left: 0;
     width: 100%;
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: fadeInDown 0.6s ease-out;
 }
 
+/* Nav container: espaçamento e alinhamento */
 .nav-container {
     display: flex;
-    padding: 0 10px;
+    padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 84px; /* aumentado para acomodar logo maior */
     position: relative;
+}
+
+.nav-menu-wrapper {
+    display: block;
 }
 
 .nav-menu {
@@ -35,16 +41,112 @@
     position: relative;
 }
 
+.nav-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text);
+    gap: 1rem;
+}
+
+.nav-logo {
+    width: 56px; /* maior por padrão para melhor visibilidade */
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.35s ease, width 0.35s ease, height 0.35s ease;
+    cursor: pointer;
+    will-change: transform, width, height;
+}
+
+/* Estado expandido do logo: centraliza e aumenta com animação (zoom) */
+.nav-logo.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 380px; /* ligeiramente maior quando expandida */
+    height: 380px;
+    z-index: 1001;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* Overlay escuro usado quando a imagem está ampliada */
+.nav-overlay {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* nav-title removido do HTML por solicitação; caso precise restaurar, estilos podem ser reativados aqui */
+/* .nav-title { font-size: 1.2rem; font-weight: 600; } */
+
 .nav-link {
     color: var(--text);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 8px 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
 }
 
-.nav-link:hover {
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(var(--accent2-rgb), 0.1),
+        transparent
+    );
+    transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent2);
+    transform: translateX(-50%);
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover,
+.nav-link.active {
     color: var(--accent2);
+    transform: translateY(-2px);
 }
 
 /* Menu Hamburguer */
@@ -69,42 +171,75 @@
     background-color: var(--text);
 }
 
-/* Responsivo */
+/* Responsivo: comportamento mobile/tablet */
 @media (max-width: 768px) {
+    /* Mostrar botão hamburger */
     .hamburger {
         display: block;
     }
 
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .nav-menu {
+    /* Tornar o wrapper um overlay full-screen quando aberto */
+    .nav-menu-wrapper {
         position: fixed;
-        top: 0;
-        right: -100%;
+        top: 84px; /* abaixo da navbar (ajustado para nova altura) */
+        left: 0;
         width: 100%;
-        height: 100vh;
+        height: calc(100vh - 84px);
         background: var(--nav-bg);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        transform: translateY(-6px);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+        z-index: 1000;
+        padding-top: 20px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 30px;
-        transition: 0.3s ease;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        align-items: flex-start;
     }
 
-    .nav-menu.active {
-        right: 0;
+    .nav-menu-wrapper.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Menu vertical centralizado */
+    .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 1.5rem;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-link {
+        display: inline-block;
+        width: 100%;
+        padding: 14px 20px;
+        font-size: 1.15rem;
+    }
+
+    /* Ajuste do logo para telas menores */
+    .nav-logo {
+        width: 48px; /* menor em telas médias para manter proporção */
+        height: 48px;
+    }
+}
+
+/* Muito pequeno (telefones estreitos) */
+@media (max-width: 420px) {
+    .nav-logo {
+        width: 44px; /* ainda visível em telefones pequenos */
+        height: 44px;
+    }
+    .nav-link {
+        font-size: 1.05rem;
+        padding: 12px 18px;
     }
 }

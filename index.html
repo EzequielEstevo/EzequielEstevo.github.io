@@ -22,29 +22,42 @@
   <div class="container">
     <!-- Header -->
     <header>
-      <nav class="navbar" id="navbar">
+  <!-- NAVIGATION: logo-only nav (nome removido). Comportamento: ver `nav.js` e `css/components/navbar.css` -->
+  <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                    <a href="blog.html" class="nav-link">Atualizações</a>
-                </li>
-                <li class="nav-item">
-                    <a href="Cnt.html" class="nav-link">Contatos</a>
-                </li>
-            </ul>
+            <a href="index.html" class="nav-brand">
+        <div class="nav-logo-wrapper">
+          <img src="img/Fotografia.png" alt="Foto de perfil" class="nav-logo">
+        </div>
+        <!-- Título removido da navegação: apenas imagem exibida conforme solicitado -->
+            </a>
+            
+      <div class="nav-buttons">
+        <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
+                    <svg class="hamburger-icon" viewBox="0 0 17 14" aria-hidden="true">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
 
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-menu-wrapper" id="nav-menu">
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active"><i class="fas fa-home"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link"><i class="fas fa-newspaper"></i> Atualizações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Cnt.html" class="nav-link">Contatos</a>
+                    </li>
+                </ul>
             </div>
         </div>
       </nav>
 
       <div class="profile-center">
-        <img src="img/Fotografia.png" alt="logo" class="profile-img" />
+        <!-- imagem de destaque removida conforme solicitado (a navegação agora usa apenas o logo) -->
         <h1 class="home-title"><span class="txt-type"></span><span class="dot">.</span></h1>
       </div>
     </header>
@@ -52,32 +65,28 @@
 
 
 
-</section>
-    <br><br>
-     
-   
-<!-- Hero -->
+    <!-- Hero -->
     <section class="hero">
       <div class="card">
-        <h1>OLÁ! É um prazer.</h1>
-        <p class="lead">Sou experiente em Windows, Linux, pacote Office, Google Workspace e ferramentas de criação como Canva. Desenvolvo páginas, pronto para seu Web curriculo? para o seu site de venda? ou uma automação para agilizar sua rotina em 70%</p>
-        <a class="cta" href="Cnt.html">Fale comigo</a>
+        <h1><i class="fas fa-hand-wave"></i> OLÁ! É um prazer.</h1>
+        <p class="lead"><i class="fas fa-laptop-code"></i> Sou experiente em Windows, Linux, pacote Office, Google Workspace e ferramentas de criação como Canva. Desenvolvo páginas, pronto para seu Web curriculo? para o seu site de venda? ou uma automação para agilizar sua rotina em 70%</p>
+        <a class="cta" href="Cnt.html"><i class="fas fa-paper-plane"></i> Fale comigo</a>
       </div>
 
 
 <br>
     <!-- Sobre Mim -->
     <section id="sobre" class="card">
-      <h2>Sobre Mim</h2>
-      <p>Olá, meu nome é <strong>Ezequiel Estevo</strong>. Tenho experiência sólida em sistemas Windows e Linux, além de dominar o pacote Office e Google Workspace. Também crio sites com HTML e CSS, sempre buscando entregar um visual moderno e responsivo.</p><p>Gosto de aprender coisas novas e aplicar meus conhecimentos para resolver problemas de forma eficiente. Minha meta é evoluir sempre, seja no desenvolvimento de sites, na criação de layouts ou em trabalhos que envolvam organização e tecnologia.</p> 
+      <h2><i class="fas fa-user"></i> Sobre Mim</h2>
+      <p>Olá, meu nome é <strong>Ezequiel Estevo</strong>. Tenho experiência sólida em sistemas Windows e Linux, além de dominar o pacote Office e Google Workspace. Também crio sites com HTML e CSS, sempre buscando entregar um visual moderno e responsivo.</p><p><i class="fas fa-lightbulb"></i> Gosto de aprender coisas novas e aplicar meus conhecimentos para resolver problemas de forma eficiente. Minha meta é evoluir sempre, seja no desenvolvimento de sites, na criação de layouts ou em trabalhos que envolvam organização e tecnologia.</p> 
       
-      <p><b>Quer acompanhar minhas ideias e novidades?
-🌐 Siga minhas redes sociais e fique por dentro: Bora conectar? 🚀</b></p>
+      <p><b><i class="fas fa-bell"></i> Quer acompanhar minhas ideias e novidades?
+<i class="fas fa-globe"></i> Siga minhas redes sociais e fique por dentro: Bora conectar? <i class="fas fa-rocket"></i></b></p>
     </section>
 
     <!-- Tecnologias -->
     <section id="tecnologias" class="tech-section card">
-      <h2>Tecnologias</h2>
+      <h2><i class="fas fa-code"></i> Tecnologias</h2>
       <div class="tech-icons">
         <i class="fa-brands fa-html5" title="HTML5"></i>
         <i class="fa-brands fa-css3-alt" title="CSS3"></i>
@@ -85,22 +94,13 @@
         <i class="fa-brands fa-github" title="GitHub"></i>
         <i class="fa-brands fa-windows" title="Windows"></i>
         <i class="fa-brands fa-linux" title="Linux"></i>
+        <i class="fa-solid fa-file-word" title="Microsoft Office"></i>
+        <i class="fa-brands fa-google-drive" title="Google Workspace"></i>
+        <i class="fa-solid fa-palette" title="Canva"></i>
       </div>
-      
-      <div class="skills">
-        <a href="desenvolvimento-web.html"><span class="chip">Desenvolvimento Web</span></a>
-        <a href="administracao.html"><span class="chip">Administração</span></a>
-        <a href="canva.html"><span class="chip">Canva</span></a>
-        <a href="windows.html"><span class="chip">Windows</span></a>
-        <a href="linux.html"><span class="chip">Linux</span></a>
-        <a href="office.html"><span class="chip">Office</span></a>
-        <a href="google-workspace.html"><span class="chip">Google Workspace</span></a>
-      </div>
-    </section>
 
     <footer id="contato">
             <p>© <span id="year"></span> Ezequiel Estevo — Desenvolvedor Web</p>
-        </nav>
     </footer>
   </div>
 
